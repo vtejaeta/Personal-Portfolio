@@ -103,3 +103,10 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 Gatsby Cloud is an end-to-end cloud platform specifically built for the Gatsby framework that combines a modern developer experience with an optimized, global edge network.
 
 <!-- AUTO-GENERATED-CONTENT:END -->
+
+### Solar System Exploration, 1950s – 1960s
+
+- [x] Google Analytics
+- [x] Testing (Contact Form, etc.,)
+- [x] Custom domain
+- [x] Push code to Github
