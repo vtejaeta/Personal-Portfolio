@@ -14,6 +14,7 @@ export default function useTheme() {
       (window.matchMedia(preferDarkColorScheme).matches ? "dark" : "light")
   )
 
+  // toggle theme based on prefers-color-scheme setting
   React.useEffect(() => {
     const mediaQuery = window.matchMedia(preferDarkColorScheme)
     const handleChange = () => setTheme(mediaQuery.matches ? "dark" : "light")
@@ -23,6 +24,7 @@ export default function useTheme() {
     return () => mediaQuery.removeEventListener("change", handleChange)
   }, [])
 
+  // set theme & save to localStorage
   React.useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme)
 
