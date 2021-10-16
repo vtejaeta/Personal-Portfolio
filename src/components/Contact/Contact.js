@@ -1,7 +1,7 @@
-import React, { useState } from "react"
+import React, { useState, useRef, useEffect } from "react"
 import styled from "styled-components"
 
-import sendEmail, { isEmailValid } from "../../utils/email.utils"
+import { sendEmail, isEmailValid } from "../../utils/email.utils"
 
 const CardContainer = styled.div`
   max-width: 35rem;
@@ -121,12 +121,10 @@ const Response = styled.p`
 `
 
 export default function Contact() {
-  let [senderInfo, setSenderInfo] = useState({
-    subject: "",
-    username: "",
-    email: "",
-    message: "",
-  })
+  let usernameRef = useRef()
+  let emailRef = useRef()
+  let subjectRef = useRef()
+  let messageRef = useRef()
 
   let [errorObject, setErrorObject] = useState({
     subjectError: null,
@@ -141,9 +139,24 @@ export default function Contact() {
     alreadySent: false,
   })
 
-  let { subject, username, email, message } = senderInfo
   let { subjectError, usernameError, emailError, messageError } = errorObject
   let { errorMessage, response, alreadySent } = emailRes
+
+  function resetUserState() {
+    usernameRef.current.value = ""
+    emailRef.current.value = ""
+    subjectRef.current.value = ""
+    messageRef.current.value = ""
+  }
+
+  function resetErrorState() {
+    setErrorObject({
+      subjectError: null,
+      usernameError: null,
+      emailError: null,
+      messageError: null,
+    })
+  }
 
   function FormSubmit(e) {
     e.preventDefault()
@@ -152,56 +165,57 @@ export default function Contact() {
       alert(
         "Sorry! I have limited mails to only one per user, please try contacting through Linkedin or Twitter, Thanks"
       )
-      setSenderInfo({
-        subject: "",
-        username: "",
-        email: "",
-        message: "",
-      })
+      usernameRef.current.value = ""
+      emailRef.current.value = ""
+      subjectRef.current.value = ""
+      messageRef.current.value = ""
+      return
+    }
+
+    let username = usernameRef.current.value
+    let subject = subjectRef.current.value
+    let email = emailRef.current.value
+    let message = messageRef.current.value
+
+    setErrorObject({
+      usernameError: username.trim().length < 2 ? true : false,
+      subjectError: subject.trim().length < 2 ? true : false,
+      emailError: isEmailValid(email) ? false : true,
+      messageError: message.trim().length < 5 ? true : false,
+    })
+  }
+
+  useEffect(() => {
+    if (subjectError || usernameError || emailError || messageError) {
       return
     }
 
     if (
-      subjectError === null ||
-      usernameError === null ||
-      emailError === null ||
-      messageError === null
+      typeof subjectError == "boolean" &&
+      !subjectError &&
+      !usernameError &&
+      !emailError &&
+      !messageError
     ) {
-      setErrorObject(
-        ({ subjectError, usernameError, emailError, messageError }) => ({
-          subjectError: subjectError === false ? false : true,
-          usernameError: usernameError === false ? false : true,
-          emailError: emailError === false ? false : true,
-          messageError: messageError === false ? false : true,
-        })
+      let username = usernameRef.current.value
+      let subject = subjectRef.current.value
+      let email = emailRef.current.value
+      let message = messageRef.current.value
+
+      sendEmail({ subject, username, email, message }).then(
+        ({ response, errorMessage }) => {
+          setEmailRes({
+            errorMessage,
+            response,
+            alreadySent: response && response.status === 200 ? true : false,
+          })
+        }
       )
-      return
-    }
 
-    if (!subjectError && !usernameError && !emailError && !messageError) {
-      sendEmail(senderInfo).then(({ response, errorMessage }) => {
-        setEmailRes({
-          errorMessage,
-          response,
-          alreadySent: response && response.status === 200 ? true : false,
-        })
-      })
-
-      // Clean-up
-      setSenderInfo({
-        subject: "",
-        username: "",
-        email: "",
-        message: "",
-      })
-      setErrorObject({
-        subjectError: null,
-        usernameError: null,
-        emailError: null,
-        messageError: null,
-      })
+      resetErrorState()
+      resetUserState()
     }
-  }
+  }, [subjectError, usernameError, emailError, messageError])
 
   return (
     <>
@@ -218,18 +232,7 @@ export default function Contact() {
                   placeholder="Name"
                   aria-label="Enter name"
                   autoComplete="off"
-                  value={username}
-                  onChange={e => {
-                    setErrorObject(state => ({
-                      ...state,
-                      usernameError:
-                        e.target.value.trim().length > 2 ? false : true,
-                    }))
-                    setSenderInfo(state => ({
-                      ...state,
-                      username: e.target.value,
-                    }))
-                  }}
+                  ref={usernameRef}
                 />
                 {usernameError === true && (
                   <ErrorLabel aria-label="Please don't leave this field blank">
@@ -245,17 +248,7 @@ export default function Contact() {
                   placeholder="Email"
                   aria-label="Enter email"
                   autoComplete="off"
-                  value={email}
-                  onChange={e => {
-                    setErrorObject(state => ({
-                      ...state,
-                      emailError: isEmailValid(e.target.value) ? false : true,
-                    }))
-                    setSenderInfo(state => ({
-                      ...state,
-                      email: e.target.value,
-                    }))
-                  }}
+                  ref={emailRef}
                 />
                 {emailError === true && (
                   <ErrorLabel aria-label="Please don't leave this field blank">
@@ -274,18 +267,7 @@ export default function Contact() {
                 placeholder="Subject"
                 aria-label="Enter subject"
                 autoComplete="off"
-                value={subject}
-                onChange={e => {
-                  setErrorObject(state => ({
-                    ...state,
-                    subjectError:
-                      e.target.value.trim().length > 2 ? false : true,
-                  }))
-                  setSenderInfo(state => ({
-                    ...state,
-                    subject: e.target.value,
-                  }))
-                }}
+                ref={subjectRef}
               />
               {subjectError === true && (
                 <ErrorLabel aria-label="Please don't leave this field blank">
@@ -298,17 +280,7 @@ export default function Contact() {
               id="message"
               placeholder="Message"
               aria-label="Enter Message"
-              value={message}
-              onChange={e => {
-                setErrorObject(state => ({
-                  ...state,
-                  messageError: e.target.value.trim().length > 2 ? false : true,
-                }))
-                setSenderInfo(state => ({
-                  ...state,
-                  message: e.target.value,
-                }))
-              }}
+              ref={messageRef}
             />
             {messageError === true && (
               <ErrorLabel aria-label="Please don't leave this field blank">
