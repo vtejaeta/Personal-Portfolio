@@ -109,4 +109,3 @@ Gatsby Cloud is an end-to-end cloud platform specifically built for the Gatsby f
 - [x] Google Analytics
 - [x] Testing (Contact Form, etc.,)
 - [x] Custom domain
-- [x] Push code to Github
