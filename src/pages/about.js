@@ -78,6 +78,7 @@ export default function About() {
           name="description"
           content="Viswa Teja E., passionate self taught Web Frontend developer"
         ></meta>
+        <meta name="theme-color" content="#5D03FC" />
       </Helmet>
       <Banner>
         <NavBar showImg={true} skipLinkId="/about#contact" />
