@@ -6,7 +6,7 @@ export function isEmailValid(email) {
   return re.test(String(email).toLowerCase())
 }
 
-export default async function sendEmail({ subject, username, email, message }) {
+export async function sendEmail({ subject, username, email, message }) {
   let response, errorMessage
 
   try {
