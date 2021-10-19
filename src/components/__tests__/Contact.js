@@ -38,7 +38,7 @@ jest.mock("../../utils/email.utils", () => {
   }
 })
 
-test("should have values in input fields", () => {
+test("should have values in input fields", async () => {
   render(<Contact />)
 
   let username = screen.getByRole("textbox", { name: /enter name/i })
@@ -52,7 +52,12 @@ test("should have values in input fields", () => {
   expect(message).not.toHaveTextContent()
 
   fireEvent.change(username, { target: { value: "Viswa" } })
+  fireEvent.change(email, { target: { value: "test@gmail.com" } })
+  fireEvent.change(subject, { target: { value: "" } })
+  fireEvent.change(message, { target: { value: "" } })
   expect(username.value).toBe("Viswa")
+
+  fireEvent.click(screen.getByRole("button", { name: /send email/i }))
 })
 
 test("Should not send email on incorrect email", () => {
