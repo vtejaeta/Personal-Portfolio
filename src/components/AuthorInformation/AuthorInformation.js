@@ -6,7 +6,7 @@ const NameGradient = styled.span`
   font-size: 4rem;
   color: var(--author-name);
 
-  @media only screen and (max-width: 420px) {
+  @media only screen and (max-width: 460px) {
     font-size: 3.2rem;
   }
 `
@@ -54,8 +54,10 @@ const AuthorInfo = styled.main`
   grid-column-start: 3;
   grid-column-end: 5;
 
-  @media only screen and (max-width: 650px) {
-    max-width: 100%;
+  @media only screen and (max-width: 767px) {
+    order: 2;
+    width: 100%;
+    margin-top: 4rem;
   }
 `
 
@@ -70,7 +72,7 @@ export default function AuthorInformation() {
         Passionate self taught web developer with primary focus on building
         interactive user interfaces.
       </p>
-      <InfoLink to="/about" id="about">
+      <InfoLink to="/about" id="about" aria-label="Click to know more about me">
         <span>More about me</span>{" "}
         <ForwardArrow>
           <svg
