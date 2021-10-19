@@ -18,6 +18,10 @@ const Nav = styled.nav`
   @media only screen and (max-width: 450px) {
     padding: 2.2rem 3rem;
   }
+
+  @media only screen and (max-width: 321px) {
+    padding: 2.2rem;
+  }
 `
 
 const List = styled.div`
@@ -187,7 +191,10 @@ export default function NavBar({ showImg = false, skipLinkId = "/#about" }) {
             tabIndex={0}
             onKeyPress={checkEnterKey}
           >
-            <ThemeToggle role="img" aria-label="Toggle theme" />
+            <ThemeToggle
+              role="img"
+              aria-label={`Currently in ${theme} mode, Click to toggle theme`}
+            />
           </ThemeContainer>
           <Hamburger />
         </MobileIconsContainer>

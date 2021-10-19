@@ -235,7 +235,7 @@ export default function Contact() {
                   ref={usernameRef}
                 />
                 {usernameError === true && (
-                  <ErrorLabel aria-label="Please don't leave this field blank">
+                  <ErrorLabel aria-label="Please don't leave username field blank">
                     Required
                   </ErrorLabel>
                 )}
@@ -251,7 +251,7 @@ export default function Contact() {
                   ref={emailRef}
                 />
                 {emailError === true && (
-                  <ErrorLabel aria-label="Please don't leave this field blank">
+                  <ErrorLabel aria-label="Please don't leave email field blank">
                     Invalid
                   </ErrorLabel>
                 )}
@@ -270,7 +270,7 @@ export default function Contact() {
                 ref={subjectRef}
               />
               {subjectError === true && (
-                <ErrorLabel aria-label="Please don't leave this field blank">
+                <ErrorLabel aria-label="Please don't leave subject field blank">
                   Required
                 </ErrorLabel>
               )}
@@ -283,11 +283,13 @@ export default function Contact() {
               ref={messageRef}
             />
             {messageError === true && (
-              <ErrorLabel aria-label="Please don't leave this field blank">
+              <ErrorLabel aria-label="Please don't leave message field blank">
                 Required
               </ErrorLabel>
             )}
-            <SendButton type="submit">Send</SendButton>
+            <SendButton type="submit" aria-label="Send email">
+              Send
+            </SendButton>
           </ContactForm>
           {response && response.status === 200 && (
             <Response>✓ Email sent successfully</Response>

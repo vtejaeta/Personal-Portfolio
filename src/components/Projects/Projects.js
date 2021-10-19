@@ -246,7 +246,7 @@ export default function Projects() {
               href="https://www.frontendmentor.io/challenges/url-shortening-api-landing-page-2ce3ob-G"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Visit challenge link"
+              aria-label="Visit frontend mentor challenge link"
             >
               Frontend Mentor challenge
             </ChallengeLink>
