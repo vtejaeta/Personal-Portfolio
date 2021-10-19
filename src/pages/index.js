@@ -13,8 +13,8 @@ import { GlobalStyles } from "../styled/globalStyles"
 import Footer from "../components/Footer/Footer"
 
 const MainFlexContainer = styled.div`
-  padding: 18rem 4rem 0;
-  margin: 0 auto 18rem;
+  padding: 12rem 4rem;
+  margin: 0 auto 7rem;
 
   max-width: 85rem;
   display: flex;
@@ -22,29 +22,25 @@ const MainFlexContainer = styled.div`
   align-items: center;
 
   @media only screen and (max-width: 767px) {
-    display: block;
+    max-width: 90%;
+    flex-direction: column;
+    padding: 4rem;
   }
 
   @media only screen and (max-width: 450px) {
-    padding: 18rem 3rem 0;
+    padding: 3rem;
   }
-`
 
-const BlobContainer = styled.div`
-  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjk4IiBoZWlnaHQ9IjY4OSIgdmlld0JveD0iMCAwIDY5OCA2ODkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMzU2LjM5NiAxLjg3MTg3QzQ1OC42NzcgLTExLjkxNDEgNTU1LjQ4MSA1Mi4zMTgzIDYxOS44NjQgMTMyLjk4MUM2ODQuMjgyIDIxMy42ODggNzEzLjMwNiAzMTguNjM4IDY4OS40MTQgNDE5LjA5OUM2NjUuNzc1IDUxOC40OTYgNTkwLjQ4OSA1OTMuNzU4IDQ5OS4zMTQgNjM5Ljg2MkM0MDUuNTMxIDY4Ny4yODQgMjk3LjI4OSA3MDcuODMgMjAwLjgwOSA2NjYuMTY3Qzk5LjY3MzMgNjIyLjQ5NCA3LjY2NTg2IDUzNC4yODQgMC4yOTA5ODggNDI0LjM2OEMtNi40MTkyOSAzMjQuMzU3IDEwNC41MTIgMjcwLjM3OCAxNjkuMTExIDE5My43MzVDMjI5LjcxIDEyMS44MzkgMjYzLjIxIDE0LjQzMTkgMzU2LjM5NiAxLjg3MTg3WiIgZmlsbD0iIzE4MjQ4QyIvPgo8L3N2Zz4K");
-  background-repeat: no-repeat;
-  background-position: 2rem 3rem;
-  background-size: 75%;
-
-  position: absolute;
-  top: -3rem;
+  @media only screen and (max-width: 321px) {
+    padding: 1.2rem;
+  }
 `
 
 const Wrapper = styled.div`
   position: relative;
 
-  height: 25rem;
-  width: 25rem;
+  height: auto;
+  width: auto;
 
   z-index: 0;
 
@@ -52,7 +48,9 @@ const Wrapper = styled.div`
   grid-column-end: 9;
 
   @media only screen and (max-width: 767px) {
-    display: none;
+    order: 1;
+    height: 75%;
+    width: 75%;
   }
 `
 
@@ -74,21 +72,19 @@ export default function Home() {
           name="description"
           content="Viswa Teja E., passionate self taught Web Frontend developer"
         ></meta>
-        <meta name="theme-color" content="#5D03FC" />
+        <meta name="theme-color" content="#6C0BA9" />
       </Helmet>
       <Banner>
         <NavBar showImg={false} skipLinkId="/#about" />
         <MainFlexContainer>
           <AuthorInformation />
           <Wrapper>
-            <BlobContainer>
-              <StaticImage
-                src="../assets/images/Solo_pic.png"
-                alt="Viswa Teja E."
-                height={400}
-                width={400}
-              ></StaticImage>
-            </BlobContainer>
+            <StaticImage
+              src="../assets/images/fixing-bugs-illustration.svg"
+              alt="Viswa Teja E. fixing bugs"
+              height={400}
+              width={400}
+            ></StaticImage>
           </Wrapper>
         </MainFlexContainer>
         <Projects />
