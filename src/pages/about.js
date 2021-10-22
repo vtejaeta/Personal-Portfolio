@@ -49,7 +49,7 @@ const StyledLink = styled(Link)`
   border-radius: 3px;
 
   color: var(--root-primary);
-  background-color: var(--main-invert-bg);
+  background-color: var(--author-name);
 
   &:hover {
     opacity: 0.8;
