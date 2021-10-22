@@ -108,7 +108,7 @@ const SendButton = styled.button`
   padding: 1.2rem 2.1rem;
 
   color: var(--root-primary);
-  background-color: var(--main-invert-bg);
+  background-color: var(--author-name);
 
   &:hover {
     opacity: 0.8;
