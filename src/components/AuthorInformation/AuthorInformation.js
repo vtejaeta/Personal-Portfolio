@@ -1,12 +1,12 @@
 import { Link } from "gatsby"
 import React from "react"
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 
 const NameGradient = styled.span`
   font-size: 4rem;
   color: var(--author-name);
 
-  @media only screen and (max-width: 420px) {
+  @media only screen and (max-width: 460px) {
     font-size: 3.2rem;
   }
 `
@@ -26,10 +26,9 @@ const TagLine = styled.p`
 const InfoLink = styled(Link)`
   font-size: 1.8rem;
   color: var(--invert-primary);
-  background-color: transparent;
 
   margin-top: 2.1rem;
-  padding: 1.2rem 0 0.8rem 0.3rem;
+  padding: 1.1rem 0.7rem 0.5rem 0;
   border-bottom: 1px solid var(--invert-primary);
 
   cursor: pointer;
@@ -40,12 +39,35 @@ const InfoLink = styled(Link)`
   align-items: center;
 `
 
+const bounce = keyframes`
+  0% {
+      left: 0
+  }
+
+  20% {
+      left: 10px
+  }
+
+  40% {
+      left: 0
+  }
+
+  to {
+      left: 0
+  }
+`
+
 const ForwardArrow = styled.span`
   color: var(--invert-primary);
   margin-left: 1px;
+  margin-bottom: 0.3rem;
 
   height: 2.5rem;
   width: 2.5rem;
+
+  position: relative;
+  animation: ${bounce} 3s infinite;
+  animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
 `
 
 const AuthorInfo = styled.main`
@@ -54,9 +76,15 @@ const AuthorInfo = styled.main`
   grid-column-start: 3;
   grid-column-end: 5;
 
-  @media only screen and (max-width: 650px) {
-    max-width: 100%;
+  @media only screen and (max-width: 767px) {
+    order: 2;
+    width: 100%;
+    margin-top: 4rem;
   }
+`
+
+const SmallDescription = styled.p`
+  line-height: 2.6rem;
 `
 
 export default function AuthorInformation() {
@@ -66,11 +94,11 @@ export default function AuthorInformation() {
         Hi I'm <NameGradient>Viswa Teja</NameGradient>
       </HeadLine>
       <TagLine>FRONTEND WEB DEVELOPER</TagLine>
-      <p>
+      <SmallDescription>
         Passionate self taught web developer with primary focus on building
         interactive user interfaces.
-      </p>
-      <InfoLink to="/about" id="about">
+      </SmallDescription>
+      <InfoLink to="/about" id="about" aria-label="Click to know more about me">
         <span>More about me</span>{" "}
         <ForwardArrow>
           <svg

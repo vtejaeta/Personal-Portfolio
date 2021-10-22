@@ -18,6 +18,10 @@ const Nav = styled.nav`
   @media only screen and (max-width: 450px) {
     padding: 2.2rem 3rem;
   }
+
+  @media only screen and (max-width: 321px) {
+    padding: 2.2rem;
+  }
 `
 
 const List = styled.div`
@@ -174,7 +178,12 @@ export default function NavBar({ showImg = false, skipLinkId = "/#about" }) {
           <ListItem href="/#Contact" aria-label="View contact">
             Contact
           </ListItem>
-          <ListItem href="/resume" aria-label="Download resume">
+          <ListItem
+            href="ViswaTeja_cv_1.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Download Viswa Teja resume"
+          >
             Resume
           </ListItem>
           <StyledLink to="/about" aria-label="View about page">
@@ -187,7 +196,10 @@ export default function NavBar({ showImg = false, skipLinkId = "/#about" }) {
             tabIndex={0}
             onKeyPress={checkEnterKey}
           >
-            <ThemeToggle role="img" aria-label="Toggle theme" />
+            <ThemeToggle
+              role="img"
+              aria-label={`Currently in ${theme} mode, Click to toggle theme`}
+            />
           </ThemeContainer>
           <Hamburger />
         </MobileIconsContainer>

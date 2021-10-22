@@ -98,7 +98,7 @@ export default function Footer() {
           href="https://github.com/vtejaeta"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Visit my Github"
+          aria-label="Visit Github"
         >
           Viswa Teja E.
         </FooterName>

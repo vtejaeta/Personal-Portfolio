@@ -30,7 +30,7 @@ export default function SocialLinks() {
         href="https://www.linkedin.com/in/viswa-teja-69b307189"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Visit my Linkedin profile"
+        aria-label="Visit Linkedin profile"
         hoverColor="#0077b5"
       >
         <Linkedin />
@@ -39,7 +39,7 @@ export default function SocialLinks() {
         href="https://github.com/vtejaeta"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Visit my Github profile"
+        aria-label="Visit Github profile"
         hoverColor="grey"
       >
         <Github />
@@ -48,7 +48,7 @@ export default function SocialLinks() {
         href="https://twitter.com/vtejaeta9493"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Visit my Twitter profile"
+        aria-label="Visit Twitter profile"
         hoverColor="#1DA1F2"
       >
         <Twitter />
