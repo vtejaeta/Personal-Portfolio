@@ -178,7 +178,12 @@ export default function NavBar({ showImg = false, skipLinkId = "/#about" }) {
           <ListItem href="/#Contact" aria-label="View contact">
             Contact
           </ListItem>
-          <ListItem href="/resume" aria-label="Download resume">
+          <ListItem
+            href="ViswaTeja_cv_1.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Download Viswa Teja resume"
+          >
             Resume
           </ListItem>
           <StyledLink to="/about" aria-label="View about page">

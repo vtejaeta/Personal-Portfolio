@@ -203,7 +203,14 @@ export default function Hamburger() {
       <MobileNavigation ref={navMenuRef}>
         <LinksContainer>
           <StyledLink to="/">Home</StyledLink>
-          <AnchorLink href="/resume">Resume</AnchorLink>
+          <AnchorLink
+            href="ViswaTeja_cv_1.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Download Viswa Teja resume"
+          >
+            Resume
+          </AnchorLink>
           <StyledLink to="/about" ref={aboutLinkRef}>
             About
           </StyledLink>
