@@ -13,7 +13,7 @@ import { GlobalStyles } from "../styled/globalStyles"
 import Footer from "../components/Footer/Footer"
 
 const MainFlexContainer = styled.div`
-  padding: 12rem 4rem;
+  padding: 10rem 4rem;
   margin: 0 auto 7rem;
 
   max-width: 85rem;
@@ -28,7 +28,7 @@ const MainFlexContainer = styled.div`
   }
 
   @media only screen and (max-width: 450px) {
-    padding: 3rem;
+    padding: 7rem 3rem;
   }
 
   @media only screen and (max-width: 321px) {
@@ -39,8 +39,8 @@ const MainFlexContainer = styled.div`
 const Wrapper = styled.div`
   position: relative;
 
-  height: auto;
-  width: auto;
+  height: 45%;
+  width: 45%;
 
   z-index: 0;
 
@@ -63,7 +63,7 @@ export default function Home() {
     <>
       <GlobalStyles />
       <Helmet htmlAttributes={{ lang: "en" }}>
-        <title>Viswa Teja E. | Software Engineer</title>
+        <title>Viswa Teja E. | Frontend Web developer</title>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -72,7 +72,7 @@ export default function Home() {
           name="description"
           content="Viswa Teja E., passionate self taught Web Frontend developer"
         ></meta>
-        <meta name="theme-color" content="#D7A1F9" />
+        <meta name="theme-color" content="#c8c5e2" />
       </Helmet>
       <Banner>
         <NavBar showImg={false} skipLinkId="/#about" />
