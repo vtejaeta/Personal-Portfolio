@@ -35,6 +35,8 @@ const Card = styled.section`
 
   @media only screen and (max-width: 767px) {
     min-height: 25rem;
+    flex-direction: column;
+    padding: 2rem 0;
   }
 `
 
@@ -42,9 +44,19 @@ const ImageWrapper = styled.div`
   flex: 0 0 57%;
   align-self: center;
   border: 1px solid var(--footer-border);
+  animation-delay: 0.25s;
+  transition-property: all;
+  transition-duration: 0.65s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
 
   @media only screen and (max-width: 767px) {
-    display: none;
+    ${"" /* display: none; */}
+    order: 1;
+  }
+
+  &:hover {
+    transform: scale(1.05);
   }
 `
 
@@ -54,11 +66,12 @@ const Content = styled.div`
   padding: 5rem 4rem 0 0;
 
   @media only screen and (max-width: 767px) {
-    padding: 4rem 2rem !important;
+    padding: 2rem 0 0 !important;
+    order: 2;
   }
 
   @media only screen and (max-width: 450px) {
-    padding: 2.8rem 2rem !important;
+    padding: 2.8rem 0.8rem 0 !important;
   }
 `
 
@@ -137,7 +150,7 @@ const MoreProjects = styled.div`
   background-color: var(--main-invert-bg);
 
   &:hover {
-    opacity: 0.8;
+    opacity: 0.9;
   }
 `
 
