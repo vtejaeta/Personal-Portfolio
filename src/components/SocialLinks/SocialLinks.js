@@ -1,8 +1,10 @@
 import React from "react"
 import styled from "styled-components"
+
 import Github from "../Icons/Github"
 import Linkedin from "../Icons/Linkedin"
 import Twitter from "../Icons/Twitter"
+import LeetCode from "../Icons/LeetCode"
 
 const SocialIconsContainer = styled.div`
   margin: 2rem;
@@ -27,7 +29,7 @@ export default function SocialLinks() {
   return (
     <SocialIconsContainer>
       <SocialIcon
-        href="https://www.linkedin.com/in/viswa-teja-69b307189"
+        href="https://www.linkedin.com/in/vtejaeta/"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Visit Linkedin profile"
@@ -45,13 +47,22 @@ export default function SocialLinks() {
         <Github />
       </SocialIcon>
       <SocialIcon
-        href="https://twitter.com/vtejaeta9493"
+        href="https://twitter.com/vtejaeta"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Visit Twitter profile"
         hoverColor="#1DA1F2"
       >
         <Twitter />
+      </SocialIcon>
+      <SocialIcon
+        href="https://leetcode.com/vtejaeta/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Visit Leetcode profile"
+        hoverColor="grey"
+      >
+        <LeetCode />
       </SocialIcon>
     </SocialIconsContainer>
   )

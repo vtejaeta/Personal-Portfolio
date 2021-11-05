@@ -35,7 +35,7 @@ html[data-theme="dark"] {
   --author-name: #9595FF;
   --main-invert-bg: #FEFEFF;
   --main-bg: #1F2028;
-  --tagline-color: #B1B2B9;
+  --tagline-color: #DBDBDB;
   --arrow-url: url("right_arrow_light.svg");
   --theme-icons-url: url("light_mode.svg");
   --footer-bg: #2E3138;

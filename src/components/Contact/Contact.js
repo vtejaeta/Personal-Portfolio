@@ -111,7 +111,7 @@ const SendButton = styled.button`
   background-color: var(--author-name);
 
   &:hover {
-    opacity: 0.8;
+    opacity: 0.9;
   }
 `
 

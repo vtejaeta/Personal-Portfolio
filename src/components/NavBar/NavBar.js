@@ -33,7 +33,7 @@ const List = styled.div`
 `
 
 const ListItem = styled.a`
-  color: var(--invert-primary);
+  color: var(--tagline-color);
   background: transparent;
 
   font-weight: 400;
@@ -47,7 +47,7 @@ const ListItem = styled.a`
 `
 
 const StyledLink = styled(Link)`
-  color: var(--invert-primary);
+  color: var(--tagline-color);
   background: transparent;
 
   font-weight: 400;
@@ -70,6 +70,11 @@ const ThemeToggle = styled.div`
   background-position: center;
   background-size: cover;
   padding: 0.8rem 1rem;
+
+  @media (max-width: 767px) {
+    height: 2rem;
+    width: 2rem;
+  }
 `
 
 const Name = styled.span`
@@ -90,6 +95,10 @@ const Name = styled.span`
 
   @media only screen and (max-width: 767px) {
     transform: translateX(6rem);
+  }
+
+  @media only screen and (max-width: 290px) {
+    display: none;
   }
 `
 
@@ -117,9 +126,11 @@ const ThemeContainer = styled.div`
 
   padding: 1rem;
   border-radius: 50%;
+  border-radius: 14px;
 
   @media only screen and (max-width: 767px) {
     margin-right: 2.2rem;
+    border-radius: 14px;
   }
 `
 
@@ -168,7 +179,7 @@ export default function NavBar({ showImg = false, skipLinkId = "/#about" }) {
       <List>
         <ProfilePicContainer to="/" aria-label="Go to home page">
           <ProfilePic showImg={showImg} />
-          <Name showImg={showImg}>Viswa Teja E.</Name>
+          <Name showImg={showImg}>{"<vtejaeta />"}</Name>
         </ProfilePicContainer>
         <SkipLink href={skipLinkId}>Skip to main content</SkipLink>
         <Section>

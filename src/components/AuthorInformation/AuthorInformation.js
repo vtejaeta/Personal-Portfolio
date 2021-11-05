@@ -4,7 +4,6 @@ import styled, { keyframes } from "styled-components"
 
 const NameGradient = styled.span`
   font-size: 4rem;
-  color: var(--author-name);
 
   @media only screen and (max-width: 460px) {
     font-size: 3.2rem;
@@ -18,18 +17,18 @@ const HeadLine = styled.h1`
 const TagLine = styled.p`
   font-size: 1.8rem;
   font-weight: 600;
+  letter-spacing: 2px;
 
   color: var(--tagline-color);
   margin-bottom: 2.1rem;
 `
 
 const InfoLink = styled(Link)`
-  font-size: 1.8rem;
+  font-size: 1.6rem;
+  font-weight: 400;
   color: var(--invert-primary);
 
-  margin-top: 2.1rem;
-  padding: 1.1rem 0.7rem 0.5rem 0;
-  border-bottom: 1px solid var(--invert-primary);
+  margin-top: 3rem;
 
   cursor: pointer;
   width: fit-content;
@@ -37,6 +36,12 @@ const InfoLink = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  background: var(--author-name);
+  color: var(--root-primary);
+  padding: 1rem 1.2rem;
+  border: 1px solid grey;
+  border-radius: 22px;
 `
 
 const bounce = keyframes`
@@ -55,19 +60,6 @@ const bounce = keyframes`
   to {
       left: 0
   }
-`
-
-const ForwardArrow = styled.span`
-  color: var(--invert-primary);
-  margin-left: 1px;
-  margin-bottom: 0.3rem;
-
-  height: 2.5rem;
-  width: 2.5rem;
-
-  position: relative;
-  animation: ${bounce} 3s infinite;
-  animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
 `
 
 const AuthorInfo = styled.main`
@@ -96,22 +88,10 @@ export default function AuthorInformation() {
       <TagLine>FRONTEND WEB DEVELOPER</TagLine>
       <SmallDescription>
         Passionate self taught web developer with primary focus on building
-        interactive user interfaces.
+        interactive and responsive user interfaces.
       </SmallDescription>
       <InfoLink to="/about" id="about" aria-label="Click to know more about me">
-        <span>More about me</span>{" "}
-        <ForwardArrow>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            height="24px"
-            viewBox="0 0 24 24"
-            width="24px"
-            fill="currentColor"
-          >
-            <path d="M0 0h24v24H0V0z" fill="none" />
-            <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z" />
-          </svg>
-        </ForwardArrow>
+        More about me
       </InfoLink>
     </AuthorInfo>
   )

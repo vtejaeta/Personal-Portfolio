@@ -5,7 +5,7 @@ import SocialLinks from "../SocialLinks/SocialLinks"
 
 const FooterContainer = styled.div`
   width: 100%;
-  margin-top: 12rem;
+  margin-top: 7rem;
 `
 
 const FooterElement = styled.footer`

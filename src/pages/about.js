@@ -8,8 +8,10 @@ import { GlobalStyles } from "../styled/globalStyles"
 
 const AboutMeContainer = styled.div`
   max-width: 85rem;
-  margin: 7rem auto 0;
-  padding: 4rem;
+  margin: 7rem auto 1.2rem;
+  padding: 4rem 4rem 2.1rem;
+
+  background-color: var(--footer-bg);
 `
 
 const HeadLine = styled.h1`
@@ -17,11 +19,11 @@ const HeadLine = styled.h1`
 `
 
 const AboutMe = styled.div`
-  padding: 4rem 0;
+  padding: 3rem 0;
 `
 
 const Paragraph = styled.p`
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   line-height: 27px;
   margin-bottom: 2.7rem;
 `
@@ -52,7 +54,7 @@ const StyledLink = styled(Link)`
   background-color: var(--author-name);
 
   &:hover {
-    opacity: 0.8;
+    opacity: 0.9;
   }
 `
 
@@ -69,7 +71,7 @@ export default function About() {
     <>
       <GlobalStyles />
       <Helmet htmlAttributes={{ lang: "en" }}>
-        <title>Viswa Teja E. | Software Engineer</title>
+        <title>Viswa Teja E. | Frontend Web developer</title>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -78,7 +80,7 @@ export default function About() {
           name="description"
           content="Viswa Teja E., passionate self taught Web Frontend developer"
         ></meta>
-        <meta name="theme-color" content="#D7A1F9" />
+        <meta name="theme-color" content="#c8c5e2" />
       </Helmet>
       <Banner>
         <NavBar showImg={true} skipLinkId="/about#contact" />
@@ -87,17 +89,18 @@ export default function About() {
           <AboutMe>
             <Paragraph>
               I'm a Frontend Web developer from India, with primary focus on
-              building interactive user interfaces. I was graduated from
-              National Institute of Technology Meghalaya under Electronics and
-              Communication Engineering in 2020.
+              building interactive and responsive user interfaces. I was
+              graduated from National Institute of Technology Meghalaya under
+              Electronics and Communication Engineering in 2020.
             </Paragraph>
             <Paragraph>
               Currently I am working with Virtusa Consulting Services Private
               Limited as Engineer-Technology. I do believe that best way to gain
               expertise in a field is, to actually have correct mental model of
-              its functionality and getting a hands on experience of it. So I
-              like to build some side projects on my free time primarily with
-              JavaScript.
+              its functionality and getting a hands on experience of it. I like
+              to explore various libraries and tools for better understanding of
+              tradeoffs between them. I love building side projects on my free
+              time primarily with JavaScript.
             </Paragraph>
             <Skills>
               <SkillsHeading>Languages and Technologies</SkillsHeading>

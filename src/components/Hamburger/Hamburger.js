@@ -4,6 +4,7 @@ import styled, { keyframes } from "styled-components"
 
 const MobileMenuContainer = styled.div`
   display: none;
+  margin-bottom: 4px;
 
   @media only screen and (max-width: 767px) {
     display: block;
@@ -33,7 +34,7 @@ const Menu = styled.div`
   }
 
   position: relative;
-  background: var(--invert-primary);
+  ${"" /* background: var(--invert-primary); */}
   transition: all 0ms 400ms;
 
   &.animate {
@@ -60,7 +61,7 @@ const Menu = styled.div`
     content: "";
     position: absolute;
     left: 0;
-    bottom: 6px;
+    bottom: 4px;
     background: var(--invert-primary);
     transition: bottom 400ms 400ms cubic-bezier(0.23, 1, 0.32, 1),
       transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
@@ -70,7 +71,7 @@ const Menu = styled.div`
     content: "";
     position: absolute;
     left: 0;
-    top: 6px;
+    top: 4px;
     background: var(--invert-primary);
     transition: top 400ms 400ms cubic-bezier(0.23, 1, 0.32, 1),
       transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
