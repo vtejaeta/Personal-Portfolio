@@ -1,6 +1,6 @@
 import { Link } from "gatsby"
 import React from "react"
-import styled, { keyframes } from "styled-components"
+import styled from "styled-components"
 
 const NameGradient = styled.span`
   font-size: 4rem;
@@ -44,24 +44,6 @@ const InfoLink = styled(Link)`
   border-radius: 22px;
 `
 
-const bounce = keyframes`
-  0% {
-      left: 0
-  }
-
-  20% {
-      left: 10px
-  }
-
-  40% {
-      left: 0
-  }
-
-  to {
-      left: 0
-  }
-`
-
 const AuthorInfo = styled.main`
   width: 39rem;
 
@@ -91,7 +73,7 @@ export default function AuthorInformation() {
         interactive and responsive user interfaces.
       </SmallDescription>
       <InfoLink to="/about" id="about" aria-label="Click to know more about me">
-        More about me
+        Know more
       </InfoLink>
     </AuthorInfo>
   )
