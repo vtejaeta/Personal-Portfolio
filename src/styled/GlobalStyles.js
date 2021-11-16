@@ -93,3 +93,28 @@ svg:not(:root) {
     vertical-align: middle;
 }
 `
+
+export const UnderLine = `
+position: relative;
+outline: none;
+
+&::after {
+  content: "";
+  bottom: -4px;
+  transform: scaleX(0);
+  transition: transform 0.25s ease;
+  transform-origin: left;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  display: block;
+  position: absolute;
+}
+
+&:hover,
+&:focus {
+  &::after {
+    background-color: var(--invert-primary);
+    transform: scaleX(1);
+  }
+}`

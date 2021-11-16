@@ -5,6 +5,8 @@ import { Link } from "gatsby"
 import Hamburger from "../Hamburger/Hamburger"
 import ProfilePic from "../ProfilePic/ProfilePic"
 
+import { UnderLine } from "../../styled/GlobalStyles"
+
 import useTheme from "../../hooks/useTheme"
 
 const Nav = styled.nav`
@@ -35,29 +37,17 @@ const List = styled.div`
 const ListItem = styled.a`
   color: var(--tagline-color);
   background: transparent;
-
   font-weight: 400;
-  padding: 0.8rem 1rem;
 
-  &:hover,
-  &:focus {
-    color: var(--invert-primary);
-    background: var(--footer-bg);
-  }
+  ${UnderLine},
 `
 
 const StyledLink = styled(Link)`
   color: var(--tagline-color);
   background: transparent;
-
   font-weight: 400;
-  padding: 0.8rem 1rem;
 
-  &:hover,
-  &:focus {
-    color: var(--invert-primary);
-    background: var(--footer-bg);
-  }
+  ${UnderLine},
 `
 
 const ThemeToggle = styled.div`
