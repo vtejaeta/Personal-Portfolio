@@ -17,7 +17,15 @@ html {
 html[data-theme="light"] {
   --root-primary: white;
   --invert-primary: black;
-  --author-name: #18248C;
+  --primary: #8629D0;
+  --on-primary: #FEFEFF;
+  --primary-cnt: #F3DBFF;
+  --on-primary-cnt: #2D0051;
+  --secondary: #CEE4FE;
+  --on-secondary: #011C34;
+  --author-name: #5353B6;
+  --work-exp-bg: hsl(235, 100%, 98%);
+  --work-exp-main: #000C61;
   --main-bg: #FEFEFF;
   --main-invert-bg: #1F2028;
   --arrow-url: url("right_arrow_dark.svg");
@@ -27,12 +35,21 @@ html[data-theme="light"] {
   --footer-border: #e6e9ee;
   --error-response: #4C4D53;
   --input-border: #dbdbdb;
+  --line-border: lightgray;
 }
 
 html[data-theme="dark"] {
   --root-primary: black;
   --invert-primary: white;
-  --author-name: #9595FF;
+  --primary: #E0B6FF;
+  --on-primary: #4A007F;
+  --primary-cnt: #6B00B3;
+  --on-primary-cnt: #F3DBFF;
+  --secondary: #004B78;
+  --on-secondary: #CEE4FE;
+  --author-name: #C1C0FE;
+  --work-exp-bg: hsl(232,33%, 21%);
+  --work-exp-main: #DDE0FF;
   --main-invert-bg: #FEFEFF;
   --main-bg: #1F2028;
   --tagline-color: #DBDBDB;
@@ -42,7 +59,8 @@ html[data-theme="dark"] {
   --footer-border: #4b4c53;
   --error-response: #CACCD9;
   --input-border: #5b5b5b;
-}
+  --line-border: #45474E;
+} 
 
 body {
   min-height: 100vh;
@@ -118,3 +136,56 @@ outline: none;
     transform: scaleX(1);
   }
 }`
+
+/* 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+html[data-theme="light"] {
+  --root-primary: white;
+  --invert-primary: black;
+  --author-name: #18248C;
+  --main-bg: #FEFEFF;
+  --main-invert-bg: #1F2028;
+  --arrow-url: url("right_arrow_dark.svg");
+  --tagline-color: #4C4D53;
+  --theme-icons-url: url("dark_mode.svg");
+  --footer-bg: #F6F7F6;
+  --footer-border: #e6e9ee;
+  --error-response: #4C4D53;
+  --input-border: #dbdbdb;
+}
+
+html[data-theme="dark"] {
+  --root-primary: black;
+  --invert-primary: white;
+  --author-name: #9595FF;
+  --main-invert-bg: #FEFEFF;
+  --main-bg: #1F2028;
+  --tagline-color: #DBDBDB;
+  --arrow-url: url("right_arrow_light.svg");
+  --theme-icons-url: url("light_mode.svg");
+  --footer-bg: #2E3138;
+  --footer-border: #4b4c53;
+  --error-response: #CACCD9;
+  --input-border: #5b5b5b;
+}
+
+
+
+
+
+
+
+*/
