@@ -26,22 +26,15 @@ const TagLine = styled.p`
 const InfoLink = styled(Link)`
   font-size: 1.6rem;
   font-weight: 400;
-  color: var(--invert-primary);
 
   margin-top: 3rem;
+  border: 1px solid grey;
+  border-radius: 2px;
+  padding: 1rem 1.2rem;
 
   cursor: pointer;
-  width: fit-content;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  background: var(--author-name);
-  color: var(--root-primary);
-  padding: 1rem 1.2rem;
-  border: 1px solid grey;
-  border-radius: 22px;
+  background: var(--primary);
+  color: var(--on-primary);
 `
 
 const AuthorInfo = styled.main`
@@ -61,6 +54,13 @@ const SmallDescription = styled.p`
   line-height: 2.6rem;
 `
 
+const ButtonsContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+`
+
 export default function AuthorInformation() {
   return (
     <AuthorInfo>
@@ -72,9 +72,28 @@ export default function AuthorInformation() {
         Passionate self taught web developer with primary focus on building
         interactive and responsive user interfaces.
       </SmallDescription>
-      <InfoLink to="/about" id="about" aria-label="Click to know more about me">
-        Know more
-      </InfoLink>
+      <ButtonsContainer>
+        <InfoLink
+          to="/about"
+          id="about"
+          aria-label="Click to know more about me"
+        >
+          Know more
+        </InfoLink>
+        <InfoLink
+          as="a"
+          href="/#Contact"
+          aria-label="Fill in the form to contact me"
+          style={{
+            marginLeft: "3rem",
+            backgroundColor: "transparent",
+            color: "var(--on-primary-cnt)",
+            border: "2px solid var(--primary-cnt)",
+          }}
+        >
+          Contact
+        </InfoLink>
+      </ButtonsContainer>
     </AuthorInfo>
   )
 }
