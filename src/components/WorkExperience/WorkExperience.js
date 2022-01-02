@@ -2,24 +2,24 @@ import React from "react"
 import styled from "styled-components"
 import ExperienceCard from "../ExperienceCard/ExperienceCard"
 
-const Wrapper = styled.div({
-  background: "var(--work-exp-bg)",
-})
+const Wrapper = styled.div`
+  background: var(--secondary);
+`
 
-const ExperienceContainer = styled.div({
-  padding: "6rem 4rem",
-  margin: "0 auto",
-  maxWidth: "85rem",
-  "@media only screen and (max-width: 450px)": {
-    padding: "6rem 3rem",
-  },
-})
+const ExperienceContainer = styled.div`
+  padding: 6rem 4rem;
+  margin: 0 auto;
+  max-width: 85rem;
+  @media only screen and (max-width: 450px) {
+    padding: 6rem 3rem;
+  }
+`
 
-const SectionHeadline = styled.h2({
-  textAlign: "center",
-  color: "var(--work-exp-main)",
-  fontSize: "2.8rem",
-})
+const SectionHeadline = styled.h2`
+  text-align: center;
+  color: var(--on-tertiary);
+  font-size: 2.8rem;
+`
 
 const DotsContainer = styled.div`
   position: relative;
@@ -38,7 +38,7 @@ const DotsContainer = styled.div`
 const MoreIllustration = styled.div`
   position: absolute;
   width: 30px;
-  background: var(--work-exp-bg);
+  background: var(--secondary);
   height: 30px;
   margin-left: calc(39.5% + 16px);
   z-index: 100;
@@ -52,13 +52,13 @@ const MoreIllustration = styled.div`
   }
 `
 
-const Dot = styled.div({
-  height: "5px",
-  width: "5px",
-  backgroundColor: "var(--line-border)",
-  margin: "2px",
-  borderRadius: "50%",
-})
+const Dot = styled.div`
+  height: 5px;
+  width: 5px;
+  background-color: var(--seperator);
+  margin: 2px;
+  border-radius: 50%;
+`
 
 export default function WorkExperience() {
   return (
@@ -69,7 +69,8 @@ export default function WorkExperience() {
           organisationName="Virtusa Consulting Services PVT LTD"
           timePeriod="Nov 2020 - Present"
           designation="Engineer Technology"
-          description="A visual designer designs for a variety of platforms, which may include Internet and intranet sites, games, movies, kiosks and wearables. In short they create concepts."
+          description="Automated test cases for Shakedown, Performance and Regression test suites and was able to
+          increase the automation coverage from 85% to 95%."
           id={1}
         ></ExperienceCard>
         <ExperienceCard
@@ -83,7 +84,7 @@ export default function WorkExperience() {
           organisationName="National Institute of Technology Meghalaya"
           timePeriod="Jul 2016 - May 2020"
           designation="E.C.E Undergrad"
-          description="Completed Implemented various algorithms fo  designs for a variety of platforms, which may include Internet and intranet sites, games, movies, kiosks and wearables. In short "
+          description="Graduated from National Institute of Meghalaya under the branch Electronics and Communication Engineering."
           id={3}
         ></ExperienceCard>
         <DotsContainer>
