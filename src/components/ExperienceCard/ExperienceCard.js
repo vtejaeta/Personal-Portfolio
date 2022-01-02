@@ -23,7 +23,10 @@ const CardContainer = styled.div`
   }
 
   &::before {
-    content: ${({ id }) => {
+    content: "";
+    position: absolute;
+
+    background-image: ${({ id }) => {
       switch (id) {
         case 1:
           return `url(work_office.svg)`
@@ -33,27 +36,16 @@ const CardContainer = styled.div`
           return `url(education.svg)`
       }
     }};
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    position: absolute;
-    background-color: var(--secondary);
+    background-color: #cee4fe;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25px 25px;
 
     margin-left: 37%;
-    border: 1px solid var(--secondary);
     border-radius: 50%;
     padding: 2rem;
 
     z-index: 1;
-
-    font-size: 5px;
-    font-weight: 600;
-
-    height: 24px;
-    width: 24px;
-    text-align: center;
 
     @media only screen and (max-width: 800px) {
       margin-left: -6.5rem;
@@ -65,7 +57,7 @@ const CardContainer = styled.div`
     position: absolute;
     width: 2px;
     height: calc(100%);
-    background-color: var(--line-border);
+    background-color: var(--seperator);
     margin-left: 39.5%;
     margin-top: 4.3rem;
 
@@ -75,23 +67,21 @@ const CardContainer = styled.div`
   }
 `
 
-const OrganisationDetails = styled.div({
-  flex: "0 0 30%",
-  // border: "1px solid black",
+const OrganisationDetails = styled.div`
+  flex: 0 0 30%;
 
-  "@media only screen and (max-width:800px)": {
-    flex: "0 0 40%",
-  },
-})
+  @media only screen and (max-width: 800px) {
+    flex: 0 0 40%;
+  }
+`
 
-const EmploymentDetails = styled.div({
-  flex: "0 0 50%",
-  // border: "1px solid black",
+const EmploymentDetails = styled.div`
+  flex: 0 0 50%;
 
-  "@media only screen and (max-width:800px)": {
-    flex: "0 0 40%",
-  },
-})
+  @media only screen and (max-width: 800px) {
+    flex: 0 0 40%;
+  }
+`
 
 export default function ExperienceCard({
   organisationName,
@@ -105,14 +95,14 @@ export default function ExperienceCard({
       <OrganisationDetails>
         <h3
           style={{
-            color: "var(--work-exp-main)",
+            color: "var(--on-secondary)",
           }}
         >
           {organisationName}
         </h3>
         <span
           style={{
-            color: "var(--work-exp-main)",
+            color: "var(--on-secondary)",
             opacity: 0.7,
           }}
         >
@@ -122,14 +112,14 @@ export default function ExperienceCard({
       <EmploymentDetails>
         <h3
           style={{
-            color: "var(--work-exp-main)",
+            color: "var(--on-secondary)",
           }}
         >
           {designation}
         </h3>
         <p
           style={{
-            color: "var(--work-exp-main)",
+            color: "var(--on-secondary)",
             opacity: 0.8,
             marginTop: "0.7rem",
             lineHeight: "1.6",
