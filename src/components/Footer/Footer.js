@@ -44,7 +44,9 @@ const FooterCredits = styled.p`
 
 const FooterName = styled.a`
   color: var(--invert-primary);
-  letterspacing: "1px";
+  letter-spacing: 1px;
+
+  border-bottom: 2px solid #087ea4;
 `
 
 const GoTopLink = styled.a`
