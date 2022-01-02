@@ -28,13 +28,12 @@ const InfoLink = styled(Link)`
   font-weight: 400;
 
   margin-top: 3rem;
-  border: 1px solid grey;
-  border-radius: 2px;
+  border-radius: 3px;
   padding: 1rem 1.2rem;
 
   cursor: pointer;
-  background: var(--primary);
-  color: var(--on-primary);
+  background: #087ea4;
+  color: white;
 `
 
 const AuthorInfo = styled.main`
@@ -87,8 +86,8 @@ export default function AuthorInformation() {
           style={{
             marginLeft: "3rem",
             backgroundColor: "transparent",
-            color: "var(--on-primary-cnt)",
-            border: "2px solid var(--primary-cnt)",
+            color: "var(--invert-primary)",
+            border: "1px solid #087ea4",
           }}
         >
           Contact
