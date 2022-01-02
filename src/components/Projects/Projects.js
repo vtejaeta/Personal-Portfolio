@@ -50,7 +50,6 @@ const ImageWrapper = styled.div`
   transition-delay: 0s;
 
   @media only screen and (max-width: 767px) {
-    ${"" /* display: none; */}
     order: 1;
   }
 
@@ -145,8 +144,8 @@ const MoreProjects = styled.button`
   border: none;
   border-radius: 3px;
 
-  color: var(--on-secondary);
-  background-color: var(--secondary);
+  background: #087ea4;
+  color: white;
 
   &:hover {
     opacity: 0.9;
@@ -154,8 +153,10 @@ const MoreProjects = styled.button`
 `
 
 const ChallengeLink = styled.a`
-  color: var(--author-name);
   font-weight: 600;
+  color: var(--invert-primary);
+
+  border-bottom: 2px solid #087ea4;
 `
 
 const Icons = styled.a`
