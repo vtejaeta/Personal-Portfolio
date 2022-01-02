@@ -118,6 +118,10 @@ const ThemeContainer = styled.div`
   border-radius: 50%;
   border-radius: 14px;
 
+  &:hover {
+    outline: 3px solid var(--input-border);
+  }
+
   @media only screen and (max-width: 767px) {
     margin-right: 2.2rem;
     border-radius: 14px;
