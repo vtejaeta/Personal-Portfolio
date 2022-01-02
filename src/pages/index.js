@@ -8,9 +8,10 @@ import NavBar from "../components/NavBar/NavBar"
 import Projects from "../components/Projects/Projects"
 
 import { Banner } from "../styled/Banner"
-import { GlobalStyles } from "../styled/globalStyles"
+import { GlobalStyles } from "../styled/GlobalStyles"
 
 import Footer from "../components/Footer/Footer"
+import WorkExperience from "../components/WorkExperience/WorkExperience"
 
 const MainFlexContainer = styled.div`
   padding: 10rem 4rem;
@@ -22,32 +23,28 @@ const MainFlexContainer = styled.div`
   align-items: center;
 
   @media only screen and (max-width: 767px) {
-    max-width: 90%;
     flex-direction: column;
     padding: 4rem;
   }
 
   @media only screen and (max-width: 450px) {
-    padding: 7rem 3rem;
-  }
-
-  @media only screen and (max-width: 321px) {
-    padding: 1.2rem;
+    padding: 4rem 3rem;
   }
 `
 
 const Wrapper = styled.div`
-  position: relative;
-
   height: 45%;
   width: 45%;
 
   z-index: 0;
 
-  grid-column-start: 7;
-  grid-column-end: 9;
-
   @media only screen and (max-width: 767px) {
+    order: 1;
+    height: 50%;
+    width: 50%;
+  }
+
+  @media only screen and (max-width: 550px) {
     order: 1;
     height: 75%;
     width: 75%;
@@ -87,6 +84,7 @@ export default function Home() {
             ></StaticImage>
           </Wrapper>
         </MainFlexContainer>
+        <WorkExperience />
         <Projects />
         <Footer />
       </Banner>

@@ -17,32 +17,36 @@ html {
 html[data-theme="light"] {
   --root-primary: white;
   --invert-primary: black;
-  --author-name: #18248C;
+  --primary: #8629D0;
+  --on-primary: #FEFEFF;
+  --secondary: #f5f6ff;
+  --on-secondary: #000C61;
   --main-bg: #FEFEFF;
-  --main-invert-bg: #1F2028;
-  --arrow-url: url("right_arrow_dark.svg");
   --tagline-color: #4C4D53;
   --theme-icons-url: url("dark_mode.svg");
   --footer-bg: #F6F7F6;
   --footer-border: #e6e9ee;
   --error-response: #4C4D53;
   --input-border: #dbdbdb;
+  --seperator: #CFD9DE;
 }
 
 html[data-theme="dark"] {
   --root-primary: black;
   --invert-primary: white;
-  --author-name: #9595FF;
-  --main-invert-bg: #FEFEFF;
+  --primary: #E0B6FF;
+  --on-primary: #4A007F;
+  --secondary: #252f3b;
+  --on-secondary: #DDE0FF;
   --main-bg: #1F2028;
   --tagline-color: #DBDBDB;
-  --arrow-url: url("right_arrow_light.svg");
   --theme-icons-url: url("light_mode.svg");
   --footer-bg: #2E3138;
   --footer-border: #4b4c53;
   --error-response: #CACCD9;
   --input-border: #5b5b5b;
-}
+  --seperator: #3e4b55;
+} 
 
 body {
   min-height: 100vh;
@@ -91,6 +95,10 @@ label{
 svg:not(:root) {
     overflow: hidden;
     vertical-align: middle;
+}
+
+button:hover{
+  opacity: 0.8;
 }
 `
 

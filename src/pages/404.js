@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { Helmet } from "react-helmet"
 import { Link } from "gatsby"
 
-import { GlobalStyles } from "../styled/globalStyles"
+import { GlobalStyles } from "../styled/GlobalStyles"
 
 const Container = styled.div`
   width: 100%;

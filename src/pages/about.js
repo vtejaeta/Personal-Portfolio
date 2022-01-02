@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet"
 import styled from "styled-components"
 import NavBar from "../components/NavBar/NavBar"
 import { Banner } from "../styled/Banner"
-import { GlobalStyles } from "../styled/globalStyles"
+import { GlobalStyles } from "../styled/GlobalStyles"
 
 const AboutMeContainer = styled.div`
   max-width: 85rem;
@@ -50,8 +50,8 @@ const StyledLink = styled(Link)`
   padding: 1.2rem 1.8rem;
   border-radius: 3px;
 
-  color: var(--root-primary);
-  background-color: var(--author-name);
+  background: var(--primary);
+  color: var(--on-primary);
 
   &:hover {
     opacity: 0.9;

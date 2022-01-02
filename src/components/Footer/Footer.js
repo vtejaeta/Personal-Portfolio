@@ -6,6 +6,7 @@ import SocialLinks from "../SocialLinks/SocialLinks"
 const FooterContainer = styled.div`
   width: 100%;
   margin-top: 7rem;
+  background-color: var(--footer-bg);
 `
 
 const FooterElement = styled.footer`
@@ -43,7 +44,9 @@ const FooterCredits = styled.p`
 
 const FooterName = styled.a`
   color: var(--invert-primary);
-  letterspacing: "1px";
+  letter-spacing: 1px;
+
+  border-bottom: 2px solid #087ea4;
 `
 
 const GoTopLink = styled.a`

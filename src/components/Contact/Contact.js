@@ -15,7 +15,7 @@ const CardContainer = styled.div`
   }
 `
 
-const ProgressTagLine = styled.h2`
+const ProgressTagLine = styled.h3`
   font-size: 2.3rem;
   color: var(--invert-primary);
 
@@ -107,8 +107,8 @@ const SendButton = styled.button`
   border-radius: 3px;
   padding: 1.2rem 2.1rem;
 
-  color: var(--root-primary);
-  background-color: var(--author-name);
+  background: var(--primary);
+  color: var(--on-primary);
 
   &:hover {
     opacity: 0.9;

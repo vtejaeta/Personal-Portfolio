@@ -1,13 +1,12 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
 
 import LiveUrl from "../Icons/LiveUrl"
 import Github from "../Icons/Github"
 
 const CardsContainer = styled.div`
-  padding: 8rem 3.5rem;
-  background-color: var(--footer-bg);
+  padding: 8rem 4rem;
 
   @media only screen and (max-width: 767px) {
     padding: 8rem 4rem 4rem;
@@ -51,7 +50,6 @@ const ImageWrapper = styled.div`
   transition-delay: 0s;
 
   @media only screen and (max-width: 767px) {
-    ${"" /* display: none; */}
     order: 1;
   }
 
@@ -137,7 +135,7 @@ const MoreProjectsLink = styled.a`
   text-decoration: none;
 `
 
-const MoreProjects = styled.div`
+const MoreProjects = styled.button`
   cursor: pointer;
   font-size: 1.6rem;
   letter-spacing: 1px;
@@ -146,8 +144,8 @@ const MoreProjects = styled.div`
   border: none;
   border-radius: 3px;
 
-  color: var(--root-primary);
-  background-color: var(--main-invert-bg);
+  background: #087ea4;
+  color: white;
 
   &:hover {
     opacity: 0.9;
@@ -155,8 +153,10 @@ const MoreProjects = styled.div`
 `
 
 const ChallengeLink = styled.a`
-  color: var(--author-name);
   font-weight: 600;
+  color: var(--invert-primary);
+
+  border-bottom: 2px solid #087ea4;
 `
 
 const Icons = styled.a`

@@ -34,7 +34,6 @@ const Menu = styled.div`
   }
 
   position: relative;
-  ${"" /* background: var(--invert-primary); */}
   transition: all 0ms 400ms;
 
   &.animate {
@@ -42,7 +41,6 @@ const Menu = styled.div`
   }
 
   &.animate:after {
-    background: white;
     top: 0;
     transform: rotate(45deg);
     transition: top 400ms cubic-bezier(0.23, 1, 0.32, 1),
@@ -50,7 +48,6 @@ const Menu = styled.div`
   }
 
   &.animate:before {
-    background: white;
     bottom: 0px;
     transform: rotate(-45deg);
     transition: bottom 400ms cubic-bezier(0.23, 1, 0.32, 1),
@@ -88,7 +85,12 @@ const LinksContainer = styled.div`
   height: 100%;
 
   & > * {
-    margin-bottom: 3rem;
+    border-top: 1px solid var(--seperator);
+    border-bottom: 1px solid var(--seperator);
+
+    &:nth-child(2) {
+      border: none;
+    }
   }
 `
 
@@ -114,7 +116,7 @@ const slideOut = keyframes`
 const MobileNavigation = styled.nav`
   display: none;
   z-index: 1;
-  background-color: #0b0b49;
+  background-color: var(--footer-bg);
 
   position: fixed;
   top: 0;
@@ -143,13 +145,21 @@ const MobileNavigation = styled.nav`
 `
 
 const StyledLink = styled(Link)`
+  color: var(--invert-primary);
   font-size: 1.8rem;
-  color: white;
+  text-align: center;
+
+  width: 100%;
+  padding: 3.2rem 1rem;
 `
 
 const AnchorLink = styled.a`
+  color: var(--invert-primary);
   font-size: 1.8rem;
-  color: white;
+  text-align: center;
+
+  width: 100%;
+  padding: 3.2rem 1rem;
 `
 
 export default function Hamburger() {
